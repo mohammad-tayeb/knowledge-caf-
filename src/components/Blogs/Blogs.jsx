@@ -3,7 +3,7 @@ import Blog from "../Blog/Blog";
 import PropTypes from 'prop-types';
 
 { console.log('Blogs connected') }
-const Blogs = ({handleAddToBookmark}) => {
+const Blogs = ({handleAddToBookmark,handleTimeRead}) => {
 
     const [blogs, setBlogs] = useState([]);
 
@@ -21,7 +21,8 @@ const Blogs = ({handleAddToBookmark}) => {
                     <Blog 
                     key={blog.id} 
                     blog={blog}
-                    handleAddToBookmark={handleAddToBookmark}>
+                    handleAddToBookmark={handleAddToBookmark}
+                    handleTimeRead={handleTimeRead}>
                     </Blog>
                 )
             }
@@ -29,6 +30,7 @@ const Blogs = ({handleAddToBookmark}) => {
     );
 };
 Blogs.propTypes = {
-    handleAddToBookmark: PropTypes.func.isRequired
+    handleAddToBookmark: PropTypes.func.isRequired,
+    handleTimeRead: PropTypes.func.isRequired
 }
 export default Blogs;
